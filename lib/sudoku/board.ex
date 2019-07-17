@@ -14,7 +14,8 @@ defmodule Sudoku.Board do
   end
 
   defp map_keys(board, row, column) do
-    Map.put(board, String.to_atom("r#{row}c#{column}"), nil)
+    board
+    |> Map.put(String.to_atom("r#{row}c#{column}"), nil)
     |> map_keys(row + 1, column)
   end
 end
